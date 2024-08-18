@@ -1,2 +1,4 @@
 typer
 pandas
+tensorflow
+sklearn

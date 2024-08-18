@@ -1,7 +1,7 @@
 # Define the base of your image.
 # We recommend to always specify a tag. `latest` may not 
 # always ensure reproducibility.
-FROM python:3.10-slim
+FROM python:3.11-slim
 
 # Set the working directory for the COPY, RUN, and ENTRYPOINT
 # commands of the Dockerfile.
@@ -18,6 +18,8 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 COPY run_model.py .
+COPY ../input/epr_health_exposure.csv .
+COPY ../input/epr_health_exposure_validation.csv .
 
 # Set the main command of the image.
 # We recommend using this form instead of `ENTRYPOINT command param1`.
