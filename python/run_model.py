@@ -2,12 +2,10 @@
 import pandas as pd
 import os
 
-parent_dir = os.path.dirname(os.getcwd())
-print(parent_dir)
 
-df_health_exposure_1 = pd.read_csv(parent_dir + '/input/epr_health_exposure.csv')
+df_health_exposure_1 = pd.read_csv(os.getcwd() + '/input/epr_health_exposure.csv')
 
-df_health_exposure_2 = pd.read_csv(parent_dir + '/input/epr_health_exposure_validation.csv')
+df_health_exposure_2 = pd.read_csv(os.getcwd() + '/input/epr_health_exposure_validation.csv')
 
 import numpy as np
 
@@ -102,4 +100,4 @@ print(prediction_array)
 print(roc_auc)
 
 prediction_df = pd.DataFrame(prediction_array, columns =['epr_number', 'disease_probability'])
-prediction_df.to_csv(os.path.join(parent_dir,'output/predictions.csv')) #
+prediction_df.to_csv(os.getcwd() + 'output/predictions.csv')
